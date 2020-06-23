@@ -1,0 +1,2 @@
+class SexualOrientation < ApplicationRecord
+end
