@@ -8,3 +8,12 @@ orientations.each do |orientation|
   SexualOrientation.create!(orientation: orientation)
 end
 puts "Created #{orientations.length} orientations"
+
+puts "Destroying all users"
+User.destroy_all
+puts "Creating an test user"
+user = User.create(email: "teste@teste.com", password: "123456", username: "teste", sexual_orientation: SexualOrientation.first, full_name: "Teste Teste", role: "User", birth_date: DateTime.new(1990, 9, 8))
+puts "Setting user as admin"
+user.admin = true
+user.save!
+puts "Successful seed"
