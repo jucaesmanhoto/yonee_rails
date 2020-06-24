@@ -3,5 +3,5 @@ class Product < ApplicationRecord
   has_many :categories
   has_many :cart
 
-  validates :name, :cents, :store, presence: true
+  validates :name, :cents, :amount, :store, presence: true
 end
