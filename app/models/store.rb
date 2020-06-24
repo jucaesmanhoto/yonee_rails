@@ -4,3 +4,4 @@ class Store < ApplicationRecord
   validates :name, :user, presence: true
   validates :name, uniqueness: { case_sensitive: false }
 end
+  
