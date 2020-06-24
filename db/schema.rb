@@ -12,9 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2020_06_23_233828) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+
+  create_table "carts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+  
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -23,6 +32,26 @@ ActiveRecord::Schema.define(version: 2020_06_23_233828) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+
+  end
+
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.integer "price_in_cents"
+    t.bigint "store_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["store_id"], name: "index_products_on_store_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rate"
+    t.text "content"
+    t.bigint "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_reviews_on_post_id"
   end
 
   create_table "sexual_orientations", force: :cascade do |t|
@@ -60,6 +89,9 @@ ActiveRecord::Schema.define(version: 2020_06_23_233828) do
   end
 
   add_foreign_key "posts", "users"
+  add_foreign_key "carts", "users"
+  add_foreign_key "products", "stores"
+  add_foreign_key "reviews", "posts"
   add_foreign_key "stores", "users"
   add_foreign_key "users", "sexual_orientations"
 end
