@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_06_24_022014) do
+ActiveRecord::Schema.define(version: 2020_06_24_030323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +93,7 @@ ActiveRecord::Schema.define(version: 2020_06_24_022014) do
     t.string "role"
     t.string "full_name"
     t.bigint "sexual_orientation_id", null: false
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["sexual_orientation_id"], name: "index_users_on_sexual_orientation_id"
