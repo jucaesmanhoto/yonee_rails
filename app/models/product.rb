@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :store
   has_many :categories
-  validates :name, :cents, :store, presence: true
+  has_many :cart
+
+  validates :name, :cents, :amount, :store, presence: true
 end
