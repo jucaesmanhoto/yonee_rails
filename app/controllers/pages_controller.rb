@@ -4,4 +4,10 @@ class PagesController < ApplicationController
       redirect_to posts_path  
     end
   end
+
+  def adulthood
+  end
+
+  def about
+  end
 end

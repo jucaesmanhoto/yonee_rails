@@ -1,5 +1,10 @@
 class PostsController < ApplicationController
   def index
+    if user_signed_in?
+      @posts = Post.all
+    else
+      @posts = Post.where(category: )
+    end
   end
 
   def show
@@ -18,5 +23,5 @@ class PostsController < ApplicationController
   end
 
   def destroy
-  end 
+  end
 end
