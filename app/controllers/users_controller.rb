@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   def show
   end
 
-
   def index
     @users = User.where.not(id: current_user.id)
   end
@@ -21,7 +20,6 @@ class UsersController < ApplicationController
   def unfollow
     if current_user.unfollow(@user.id)
       redirect_to @user
-      end
     end
   end
 

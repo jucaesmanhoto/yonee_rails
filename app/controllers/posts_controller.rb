@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     if user_signed_in?
       @posts = Post.all
     else
-      @posts = Post.where(category: )
+      @posts = Post.all
     end
   end
 
