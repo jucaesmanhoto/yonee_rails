@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_06_24_004527) do
+ActiveRecord::Schema.define(version: 2020_06_25_022139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +20,19 @@ ActiveRecord::Schema.define(version: 2020_06_24_004527) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "following_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -33,13 +45,13 @@ ActiveRecord::Schema.define(version: 2020_06_24_004527) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
-
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.integer "price_in_cents"
     t.bigint "store_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "amount"
     t.index ["store_id"], name: "index_products_on_store_id"
   end
 
@@ -66,6 +78,13 @@ ActiveRecord::Schema.define(version: 2020_06_24_004527) do
     t.index ["user_id"], name: "index_stores_on_user_id"
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.bigint "cart_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cart_id"], name: "index_transactions_on_cart_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -81,6 +100,7 @@ ActiveRecord::Schema.define(version: 2020_06_24_004527) do
     t.string "role"
     t.string "full_name"
     t.bigint "sexual_orientation_id", null: false
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["sexual_orientation_id"], name: "index_users_on_sexual_orientation_id"
@@ -91,5 +111,6 @@ ActiveRecord::Schema.define(version: 2020_06_24_004527) do
   add_foreign_key "products", "stores"
   add_foreign_key "reviews", "posts"
   add_foreign_key "stores", "users"
+  add_foreign_key "transactions", "carts"
   add_foreign_key "users", "sexual_orientations"
 end
