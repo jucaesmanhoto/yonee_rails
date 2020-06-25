@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_06_25_031123) do
 
   # These are extensions that must be enabled in order to support this database
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_06_25_031123) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+
   create_table "post_categories", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "category_id", null: false
@@ -44,6 +46,13 @@ ActiveRecord::Schema.define(version: 2020_06_25_031123) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_post_categories_on_category_id"
     t.index ["post_id"], name: "index_post_categories_on_post_id"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "following_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "posts", force: :cascade do |t|
