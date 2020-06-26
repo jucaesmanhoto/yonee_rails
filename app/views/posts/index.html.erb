@@ -1,1 +1,16 @@
-    <%= render 'shared/footer' %>
+  <%= render 'shared/footer' %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Posts</h1>
+            <ul>
+                <% @posts.each do |post| %>
+                <li><%= post.title %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+    <%= link_to "sign out", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+</div>
+
