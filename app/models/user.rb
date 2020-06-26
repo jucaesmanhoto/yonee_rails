@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following
 
+  has_many :user_interests
+  has_many :categories, through: :user_interests
+
   validates :full_name, :username, :birth_date, presence: true
   validates :username, :document, uniqueness: { case_sensitive: false }
   validates :role, inclusion: { in: ["User", "Store"] }

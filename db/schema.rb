@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_25_184247) do
+ActiveRecord::Schema.define(version: 2020_06_26_004855) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +53,18 @@ ActiveRecord::Schema.define(version: 2020_06_25_184247) do
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follower_id"], name: "index_follows_on_follower_id"
+    t.index ["following_id", "follower_id"], name: "index_follows_on_following_id_and_follower_id", unique: true
+    t.index ["following_id"], name: "index_follows_on_following_id"
+  end
+
+  create_table "post_categories", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_post_categories_on_category_id"
     t.index ["post_id"], name: "index_post_categories_on_post_id"
   end
@@ -63,6 +76,7 @@ ActiveRecord::Schema.define(version: 2020_06_25_184247) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "private", default: true
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -115,6 +129,15 @@ ActiveRecord::Schema.define(version: 2020_06_25_184247) do
     t.index ["cart_id"], name: "index_transactions_on_cart_id"
   end
 
+  create_table "user_interests", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_user_interests_on_category_id"
+    t.index ["user_id"], name: "index_user_interests_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -131,7 +154,6 @@ ActiveRecord::Schema.define(version: 2020_06_25_184247) do
     t.string "full_name"
     t.bigint "sexual_orientation_id", null: false
     t.boolean "admin"
-    t.string "interest", default: [], array: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["sexual_orientation_id"], name: "index_users_on_sexual_orientation_id"
@@ -149,5 +171,7 @@ ActiveRecord::Schema.define(version: 2020_06_25_184247) do
   add_foreign_key "reviews", "posts"
   add_foreign_key "stores", "users"
   add_foreign_key "transactions", "carts"
+  add_foreign_key "user_interests", "categories"
+  add_foreign_key "user_interests", "users"
   add_foreign_key "users", "sexual_orientations"
 end
