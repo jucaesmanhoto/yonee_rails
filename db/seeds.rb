@@ -10,6 +10,10 @@ categories.each do |category|
 end
 puts "Created #{categories.length} categories"
 
+
+puts "Destroying all users"
+User.destroy_all
+
 puts "Destroying all orientations"
 SexualOrientation.destroy_all
 orientations = ["homosexual", "heterosexual"]
@@ -24,6 +28,7 @@ Post.destroy_all
 
 puts "Destroying all users"
 User.destroy_all
+
 puts "Creating an test user"
 user = User.create(email: "teste@teste.com", password: "123456", username: "teste", sexual_orientation: SexualOrientation.first, full_name: "Teste Teste", role: "User", birth_date: DateTime.new(1990, 9, 8))
 puts "Setting user as admin"
