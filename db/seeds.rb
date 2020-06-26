@@ -37,7 +37,7 @@ user.save!
 puts "Created user"
 
 puts "Creating user interest"
-tantra = UserInterest.create(user: user, category: Category.first)
+UserInterest.create(user: user, category: Category.first)
 puts "Created user interest"
 
 puts "Creating a post"
