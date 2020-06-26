@@ -21,7 +21,6 @@ class UsersController < ApplicationController
   def unfollow
     if current_user.unfollow(@user.id)
       redirect_to @user
-      end
     end
   end
 

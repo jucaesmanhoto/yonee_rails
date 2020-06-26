@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
   def index
     if user_signed_in?
-      @posts = Post.all
+      @category_ids = current_user.category_ids
+      @post = Post.joins(:post_categories).where(post_categories: {category_id: @category_ids})
     else
-      @posts = Post.where(category: )
+      @posts = Post.where(private: false)
     end
   end
 
