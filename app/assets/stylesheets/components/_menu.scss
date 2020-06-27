@@ -1,0 +1,27 @@
+.animate {
+  transform: translate(90%);
+  transition-property: transform;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+}
+.menu {
+  background: linear-gradient(-45deg, #6a1c32, #af1f28);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 10;
+  height: calc(100% - 4rem);
+  width: 80%;
+}
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  a {
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem 2.5rem;
+  }
+}
+.img-menu {
+  padding: 2rem 2.5rem;
+}

@@ -6,5 +6,5 @@ class Category < ApplicationRecord
   has_many :posts, through: :post_categories
 
   has_many :user_interests, dependent: :destroy
-  has_many :users, through: :user_interents
+  has_many :users, through: :user_interests
 end

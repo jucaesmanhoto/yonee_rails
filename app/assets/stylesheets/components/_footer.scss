@@ -1,3 +1,14 @@
-.menu_icon {
-  width: 100px;
+.footer {
+  background: #671c33;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+}
+.menu-icon {
+  width: 2rem;
+  height: 2rem;
 }
