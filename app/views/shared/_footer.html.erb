@@ -1,46 +1,31 @@
-<!-- Footer -->
-<footer id="footer" class="page-footer font-small special-color-dark pt-4">
-
-      <!-- Footer Elements -->
-  <div class="container">
-
-      <!-- Social buttons -->
-      <ul class="list-unstyled list-inline text-center">
-        <li class="list-inline-item">
-          <a class="btn-floating btn-fb mx-1">
-              <%= image_tag "icones-01.png", class: "menu_icon" %>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-tw mx-1">
-            <i class="fab fa-twitter"> </i>
-        </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-gplus mx-1">
-            <i class="fab fa-google-plus-g"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-li mx-1">
-            <i class="fab fa-linkedin-in"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-instagram mx-1">
-            <i class="fab fa-instagram"> </i>
-          </a>
-        </li>
-      </ul>
-    <!-- Social buttons -->
-
+<div class="menu animation">
+  <div class="img-menu">
+    <%= image_tag 'https://i0.wp.com/oabjaraguadosul.org.br/wp-content/uploads/2019/05/no-avatar-25359d55aa3c93ab3466622fd2ce712d1.jpg?fit=200%2C200&ssl=1', class: "avatar-large" %>
+    <i class="fas fa-chevron-left"></i>
   </div>
-    <!-- Footer Elements -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center pb-3">© 2020 Yonee Group.
+  <div class="menu-links">
+    <%= link_to  "QUEM SOMOS" %>
+    <%= link_to  "FEED", posts_path %>
+    <%= link_to  "EDITAR PERFIL" %>
+    <%= link_to  "FAVORITOS" %>
+    <%= link_to  "SUGESTÕES" %>
+    <%= link_to  "SAIR", destroy_user_session_path, method: :delete %>
   </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
+</div>
+<div class="footer">
+  <%= link_to "#" do %>
+    <%= image_tag  "menu-white", class:"menu-icon" %>
+  <% end %>
+  <%= link_to root_path do %>
+    <%= image_tag  "home-white", class:"menu-icon" %>
+  <% end %>
+  <%= link_to  user_path(current_user.id) do %>
+    <%= image_tag  "user-white", class:"menu-icon" %>
+  <% end %>
+  <%= link_to "#" do %>
+    <%= image_tag  "heart-white", class:"menu-icon" %>
+  <% end %>
+  <%= link_to "#" do %>
+    <%= image_tag  "search-white", class:"menu-icon" %>
+  <% end %>
+</div>
