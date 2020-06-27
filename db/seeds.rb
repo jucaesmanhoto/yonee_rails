@@ -27,19 +27,19 @@ puts "Created #{orientations.length} orientations"
 
 
 puts "Creating an test user"
-user = User.create(email: "teste@teste.com", password: "123456", username: "teste", sexual_orientation: SexualOrientation.first, full_name: "Teste Teste", role: "User", birth_date: DateTime.new(1990, 9, 8))
+user = User.create(email: "teste@teste.com", password: "123456", username: "teste", sexual_orientation: SexualOrientation.first, full_name: "Teste Teste", role: "User", birth_date: DateTime.new(1990, 9, 8), document: "55555X")
 puts "Setting test user as admin"
 user.admin = true
 user.save!
 puts "Created user"
 puts "Creating an user"
-user1 = User.create(email: "afonso@hotmail.com", password: "123456", username: "afonsinho", sexual_orientation: SexualOrientation.first, full_name: "Afonso Pereira", role: "User", birth_date: DateTime.new(1996, 9, 12))
+user1 = User.create(email: "afonso@hotmail.com", password: "123456", username: "afonsinho", sexual_orientation: SexualOrientation.first, full_name: "Afonso Pereira", role: "User", birth_date: DateTime.new(1996, 9, 12), document: "55556X")
 puts "Created user"
 puts "Creating an user"
-user2 = User.create(email: "jesica@gmail.com", password: "123456", username: "jaacabou", sexual_orientation: SexualOrientation.last, full_name: "Jesica Nunes", role: "User", birth_date: DateTime.new(1980, 9, 10))
+user2 = User.create(email: "jesica@gmail.com", password: "123456", username: "jaacabou", sexual_orientation: SexualOrientation.last, full_name: "Jesica Nunes", role: "User", birth_date: DateTime.new(1980, 9, 10), document: "55575X")
 puts "Created user"
 puts "Creating an user"
-user3 = User.create(email: "bob@yahoo.com", password: "123456", username: "bob", sexual_orientation: SexualOrientation.last, full_name: "Bob Marley", role: "User", birth_date: DateTime.new(1999, 12, 8))
+user3 = User.create(email: "bob@yahoo.com", password: "123456", username: "bob", sexual_orientation: SexualOrientation.last, full_name: "Bob Marley", role: "User", birth_date: DateTime.new(1999, 12, 8), document: "55558X")
 puts "Created user"
 
 puts "Creating user interest"
@@ -65,16 +65,16 @@ puts "Creating a post"
 post2 = Post.create!(title: "titulo2", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user )
 puts "Created one post"
 puts "Creating a post"
-post3 = Post.create!(title: "titulo3", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user )
+post3 = Post.create!(title: "titulo3", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user1 )
 puts "Created one post"
 puts "Creating a post"
-post4 = Post.create!(title: "titulo4", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user )
+post4 = Post.create!(title: "titulo4", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user2 )
 puts "Created one post"
 puts "Creating a post"
-post5 = Post.create!(title: "titulo5", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user )
+post5 = Post.create!(title: "titulo5", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user3 )
 puts "Created one post"
 puts "Creating a post"
-post6 = Post.create!(title: "titulo6", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user )
+post6 = Post.create!(title: "titulo6", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user3 )
 puts "Created one post"
 
 puts "Creating post category"
