@@ -23,5 +23,12 @@
   }
 }
 .img-menu {
-  padding: 2rem 2.5rem;
+  padding: 2rem 1.5rem 3rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  i {
+    font-size: 4rem;
+    color: white;
+  }
 }
