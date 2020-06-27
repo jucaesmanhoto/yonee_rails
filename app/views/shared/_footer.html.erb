@@ -1,0 +1,31 @@
+<div class="menu animation">
+  <div class="img-menu">
+    <%= image_tag 'https://i0.wp.com/oabjaraguadosul.org.br/wp-content/uploads/2019/05/no-avatar-25359d55aa3c93ab3466622fd2ce712d1.jpg?fit=200%2C200&ssl=1', class: "avatar-large" %>
+    <i class="fas fa-chevron-left"></i>
+  </div>
+  <div class="menu-links">
+    <%= link_to  "QUEM SOMOS" %>
+    <%= link_to  "FEED", posts_path %>
+    <%= link_to  "EDITAR PERFIL" %>
+    <%= link_to  "FAVORITOS" %>
+    <%= link_to  "SUGESTÕES" %>
+    <%= link_to  "SAIR", destroy_user_session_path, method: :delete %>
+  </div>
+</div>
+<div class="footer">
+  <%= link_to "#" do %>
+    <%= image_tag  "menu-white", class:"menu-icon" %>
+  <% end %>
+  <%= link_to root_path do %>
+    <%= image_tag  "home-white", class:"menu-icon" %>
+  <% end %>
+  <%= link_to  user_path(current_user.id) do %>
+    <%= image_tag  "user-white", class:"menu-icon" %>
+  <% end %>
+  <%= link_to "#" do %>
+    <%= image_tag  "heart-white", class:"menu-icon" %>
+  <% end %>
+  <%= link_to "#" do %>
+    <%= image_tag  "search-white", class:"menu-icon" %>
+  <% end %>
+</div>
