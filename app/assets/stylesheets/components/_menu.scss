@@ -1,8 +1,9 @@
-.animate {
-  transform: translate(90%);
-  transition-property: transform;
-  transition-duration: 2s;
-  transition-timing-function: linear;
+.animation {
+  display: none !important;
+  // transform: translate(90%);
+  // transition-property: transform;
+  // transition-duration: 2s;
+  // transition-timing-function: linear;
 }
 .menu {
   background: linear-gradient(-45deg, #6a1c32, #af1f28);
