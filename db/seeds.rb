@@ -10,6 +10,8 @@ categories.each do |category|
 end
 puts "Created #{categories.length} categories"
 
+puts "Destroying all posts"
+Post.destroy_all
 
 puts "Destroying all users"
 User.destroy_all
@@ -23,11 +25,6 @@ orientations.each do |orientation|
 end
 puts "Created #{orientations.length} orientations"
 
-puts "Destroying all posts"
-Post.destroy_all
-
-puts "Destroying all users"
-User.destroy_all
 
 puts "Creating an test user"
 user = User.create(email: "teste@teste.com", password: "123456", username: "teste", sexual_orientation: SexualOrientation.first, full_name: "Teste Teste", role: "User", birth_date: DateTime.new(1990, 9, 8))
@@ -49,16 +46,16 @@ puts "Creating user interest"
 UserInterest.create(user: user, category: Category.first)
 puts "Created user interest"
 puts "Creating user interest"
-massagem = UserInterest.create(user: user1, category: Category.last)
+massagem = UserInterest.create(user: User.find_by(username: "afonsinho"), category: Category.last)
 puts "Created user interest"
 puts "Creating user interest"
-tantra1 = UserInterest.create(user: user1, category: Category.first)
+tantra1 = UserInterest.create(user: User.find_by(username: "afonsinho"), category: Category.first)
 puts "Created user interest"
 puts "Creating user interest"
-tantra2 = UserInterest.create(user: user2, category: Category.first)
+tantra2 = UserInterest.create(user: User.find_by(username: "jaacabou"), category: Category.first)
 puts "Created user interest"
 puts "Creating user interest"
-massagem1 = UserInterest.create(user: user3, category: Category.last)
+massagem1 = UserInterest.create(user: User.find_by(username: "bob"), category: Category.last)
 puts "Created user interest"
 
 puts "Creating a post"
@@ -68,16 +65,16 @@ puts "Creating a post"
 post2 = Post.create!(title: "titulo2", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user )
 puts "Created one post"
 puts "Creating a post"
-post3 = Post.create!(title: "titulo3", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user2 )
+post3 = Post.create!(title: "titulo3", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user )
 puts "Created one post"
 puts "Creating a post"
-post4 = Post.create!(title: "titulo4", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user2 )
+post4 = Post.create!(title: "titulo4", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user )
 puts "Created one post"
 puts "Creating a post"
-post5 = Post.create!(title: "titulo5", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user3 )
+post5 = Post.create!(title: "titulo5", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user )
 puts "Created one post"
 puts "Creating a post"
-post6 = Post.create!(title: "titulo6", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user3 )
+post6 = Post.create!(title: "titulo6", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", status: "Approved", user: user )
 puts "Created one post"
 
 puts "Creating post category"
