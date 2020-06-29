@@ -1,0 +1,16 @@
+.container-triangle {
+  background: linear-gradient(-45deg, #6a1c32, #af1f28);
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+.over-hidden {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

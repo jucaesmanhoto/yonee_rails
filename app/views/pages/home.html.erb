@@ -1,7 +1,14 @@
-
-<%= link_to  "Entre", new_user_session_path %>
-<br />
-<%= link_to  "Cadastre-se", new_user_registration_path %>
-<br />
-<%= link_to  "Quer dar uma espiadinha antes?", adulthood_path %>
+<div class="container-triangle">
+  <div class="over-hidden">
+    <%= image_tag  "yoneetriangle.png", class:"logo-home" %>
+  </div>
+  <div>
+    <%= link_to  "ENTRE", new_user_session_path, class:"btn-border" %>
+    <%= link_to  "CADASTRE-SE", new_user_registration_path, class:"btn-white" %>
+    <%= link_to adulthood_path, class:"link" do %>
+      <%= image_tag  "eye.png", class:"eye" %>
+      <p>QUER DAR UMA ESPIADINHA ANTES?</p>
+    <% end %>
+  </div>
+</div>
 
