@@ -1,4 +1,8 @@
-<h1>Você tem mais de 18 anos?</h1>
-<%= link_to  "Ainda não :(", root_path %>
-<br />
-<%= link_to  "Sim!!!", posts_path %>
+<div class="container-red">
+<%= image_tag  "hand.png", class: "icon-stop" %>
+  <h1 class="ask-container" >VOCÊ TEM MAIS DE 18 ANOS?</h1>
+  <div class="btn-container">
+    <%= link_to  "AINDA NÃO :(", root_path, class: "btn-border" %>
+    <%= link_to  "SIM!!!", posts_path, class: "btn-white" %>
+  </div>
+</div>
