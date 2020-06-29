@@ -1,16 +1,28 @@
-  <%= render 'shared/footer' %>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h1>Posts</h1>
-            <ul>
-                <% @posts.each do |post| %>
-                <li><%= post.title %></li>
-                <% end %>
-            </ul>
-        </div>
+<div class="page-container">
+    <div class="nav">
+        <p>FEED</p>
     </div>
-    <%= link_to "sign out", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+    <div class="content-wrap">
+        <div class="container-around">
+            <%= link_to  "NOVO POST", new_post_path, class:"btn-red" %>
+            <%= link_to  "EXPLORE!", "#", class: "btn-red" %>
+        </div>
+        <ul class="posts">
+            <% @posts.each do |post| %>
+            <li>
+                <div class="author-container">
+                    <%= image_tag 'https://i0.wp.com/oabjaraguadosul.org.br/wp-content/uploads/2019/05/no-avatar-25359d55aa3c93ab3466622fd2ce712d1.jpg?fit=200%2C200&ssl=1', class: "avatar-bordered" %>
+                    <p class="author"><%= post.user.full_name %></p>
+                </div>
+                <p><%= post.content %></p>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+    <%
+=begin%>
+ <%= link_to "sign out", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %> 
+<%
+=end%>
+    <%= render 'shared/footer' %>
 </div>
-
