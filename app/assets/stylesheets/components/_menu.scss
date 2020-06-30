@@ -1,23 +1,23 @@
 .animation {
-  display: none !important;
-  // transform: translate(90%);
-  // transition-property: transform;
-  // transition-duration: 2s;
-  // transition-timing-function: linear;
+  animation-name: open;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 .menu {
   background: linear-gradient(-45deg, #6a1c32, #af1f28);
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 10;
-  height: calc(100% - 4rem);
-  width: 80%;
+  width: 70%;
+  height: calc(100vh - 4rem);
+  overflow: hidden;
 }
 .menu-links {
   display: flex;
   flex-direction: column;
+  width: max-content;
   a {
     color: white;
     font-size: 1.5rem;
