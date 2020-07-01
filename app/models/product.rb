@@ -7,5 +7,5 @@ class Product < ApplicationRecord
   has_many :cart_products, dependent: :destroy
   has_many :cart, through: :cart_products
 
-  validates :name, :cents, :amount, :store, presence: true
+  validates :name, :price_in_cents, :amount, :store, presence: true
 end
