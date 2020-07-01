@@ -19,6 +19,20 @@
   min-height: 100vh;
   padding: 4rem;
 }
+.container-flower {
+  background: url(background-flower.png) no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100vh;
+  color: white;
+  h1, h2, h3 {
+    text-align: center;
+    margin: 8rem 0;
+    font-weight: 400;
+  }
+}
 .over-hidden {
   overflow: hidden;
   width: 100%;
