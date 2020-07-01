@@ -91,6 +91,26 @@
     margin: 0;
   }
 }
+.links {
+  a {
+    color: white;
+    font-weight: 300;
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+.link-white {
+  color: white;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
 .link-gray {
   font-size: 0.8rem;
   color: #999;
