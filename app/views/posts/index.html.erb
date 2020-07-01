@@ -12,9 +12,19 @@
             <li>
                 <div class="author-container">
                     <%= image_tag 'https://i0.wp.com/oabjaraguadosul.org.br/wp-content/uploads/2019/05/no-avatar-25359d55aa3c93ab3466622fd2ce712d1.jpg?fit=200%2C200&ssl=1', class: "avatar-bordered" %>
-                    <p class="author"><%= post.user.full_name %></p>
+                    <div class="post-info">
+                        <h3 class="post-title"><%= post.title %></h3>
+                        <p class="author"><%= post.user.full_name %></p>
+                        <p class="created-at"><%= post.created_at.strftime("%d/%m/%Y - %kh") %></p>
+                    </div>
                 </div>
-                <p><%= post.content %></p>
+                <p>
+                    <%= post.content[0..200]%>
+                    <% if post.content.length >= 200 %>
+                        ...    
+                    <em class="link-red">See more</em>
+                    <% end %>
+                </p>
             </li>
             <% end %>
         </ul>
@@ -24,5 +34,5 @@
  <%= link_to "sign out", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %> 
 <%
 =end%>
-    <%= render 'shared/footer' %>
+    <%= render 'shared/footer', page: "feed" %>
 </div>

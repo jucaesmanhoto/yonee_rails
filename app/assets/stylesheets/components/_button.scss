@@ -60,6 +60,21 @@
     color: white;
   }
 }
+.btn-orange {
+  color: #df854f;
+  font-size: 1.2rem;
+  border: 1px solid #4B858E;
+  border-radius: 0.8rem;
+  padding: 01rem;
+  font-weight: 600;
+  width: 80vw;
+  text-align: center;
+  margin: 8px;
+  &:hover {
+    text-decoration: none;
+    color: #df854f;
+  }
+}
 
 .link {
   color: white;
@@ -74,5 +89,43 @@
   }
   p {
     margin: 0;
+  }
+}
+.links {
+  a {
+    color: white;
+    font-weight: 300;
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+.link-white {
+  color: white;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+.link-gray {
+  font-size: 0.8rem;
+  color: #999;
+  &:hover {
+    text-decoration: none;
+    color: #999;
+  }
+}
+.link-red {
+  font-size: 0.8rem;
+  color: #671c33;
+  font-weight: 600;
+  white-space: nowrap;
+  &:hover {
+    text-decoration: none;
+    color: #671c33;
   }
 }
