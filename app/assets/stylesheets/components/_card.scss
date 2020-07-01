@@ -5,10 +5,35 @@
   .author-container {
     display: flex;
     align-items: center;
+    margin: 1rem 0;
+  }
+  .post-title {
+    margin: 0;
+    color: #671c33;
   }
   .author {
     color: #DF854F;
-    margin: 0 0.8rem;
     font-weight: 500;
+    margin: 0;
   }
+  .created-at {
+    margin: 0;
+    font-size: 0.6rem;
+  }
+}
+.follow {
+  color: #691C32;
+  font-weight: 600;
+  margin: 1rem;
+  em {
+    font-size: 1.5rem;
+    font-style: normal;
+  }
+}
+.desc {
+  font-size: 0.8rem;
+}
+.name {
+  font-size: 18px;
+  font-weight: 600;
 }

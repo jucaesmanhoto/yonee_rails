@@ -16,11 +16,19 @@
   <%= link_to "#" do %>
     <%= image_tag  "menu-white.png", class:"menu-icon" %>
   <% end %>
-  <%= link_to root_path do %>
-    <%= image_tag  "home-white.png", class:"menu-icon" %>
+  <%= link_to posts_path do %>
+    <% if page==="feed" %>
+      <%= image_tag  "home-red.png", class:"menu-icon" %>
+    <% else %>
+      <%= image_tag  "home-white.png", class:"menu-icon" %>
+    <% end %>
   <% end %>
   <%= link_to  user_path(current_user.id) do %>
-    <%= image_tag  "user-white.png", class:"menu-icon" %>
+    <% if page==="profile" %>
+      <%= image_tag  "user-red.png", class:"menu-icon" %>
+    <% else %>
+      <%= image_tag  "user-white.png", class:"menu-icon" %>
+    <% end %>
   <% end %>
   <%= link_to "#" do %>
     <%= image_tag  "heart-white.png", class:"menu-icon" %>

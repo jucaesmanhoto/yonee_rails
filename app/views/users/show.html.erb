@@ -1,22 +1,29 @@
-<div> 
-  <div> 
-    <%= image_tag 'https://i0.wp.com/oabjaraguadosul.org.br/wp-content/uploads/2019/05/no-avatar-25359d55aa3c93ab3466622fd2ce712d1.jpg?fit=200%2C200&ssl=1', class: "avatar" %> 
-    <div>
-      <h3> <%= @user.full_name %></h3>
-      <p> Loren </p>
-      <%= link_to "Edit", edit_user_registration_path %>
-    </div>
-   </div> 
-  <div> 
-    <span class="user-following"> <%= @user.following.count %> seguindo</span>
-    <span class="user-followers"> <%= @user.followers.count %> seguidores</span>
+<div class="page-container">
+  <div class="nav">
+    <p>MEU PERFIL</p>
   </div>
+  <div class="container-col-center">
+    <div class="white">
+      <div class="container-center"> 
+        <%= image_tag 'https://i0.wp.com/oabjaraguadosul.org.br/wp-content/uploads/2019/05/no-avatar-25359d55aa3c93ab3466622fd2ce712d1.jpg?fit=200%2C200&ssl=1', class: "avatar-red" %> 
+        <div class="container-col">
+          <h3 class="name"> <%= @user.full_name %></h3>
+          <p class="desc"> Loren </p>
+          <%= link_to "EDITAR", edit_user_registration_path, class:"link-gray" %>
+        </div>
+      </div> 
+      <div class="container-around"> 
+        <span class="follow"><em><%= @user.following.count %></em> seguindo</span>
+        <span class="follow"><em><%= @user.followers.count %></em> seguidores</span>
+      </div>
+    </div>
+    <div class="container-col-center"> 
+      <%= link_to  "MEUS INTERESSES", "#", class:"btn-orange" %>
+      <%= link_to  "MEUS POSTS", "#", class:"btn-orange" %>
+      <%= link_to  "MENSAGENS", "#", class:"btn-orange" %>
+      <%= link_to  "SOLICITAÇÕES", "#", class:"btn-orange" %>
+      <%= link_to  "CONFIGURAÇÕES", "#", class:"btn-orange" %>
+    </div>
+  </div>
+  <%= render 'shared/footer', page: "profile" %>
 </div>
-<div> 
-<%= link_to  "Meus interesses", "#" %>
-<%= link_to  "Meus posts", "#" %>
-<%= link_to  "Mensagens", "#" %>
-<%= link_to  "Solicitações", "#" %>
-<%= link_to  "Configurações", "#" %>
-</div>
-  
