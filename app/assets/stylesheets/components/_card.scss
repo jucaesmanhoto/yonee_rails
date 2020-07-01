@@ -1,0 +1,14 @@
+.posts {
+  li {
+    list-style: none;
+  }
+  .author-container {
+    display: flex;
+    align-items: center;
+  }
+  .author {
+    color: #DF854F;
+    margin: 0 0.8rem;
+    font-weight: 500;
+  }
+}

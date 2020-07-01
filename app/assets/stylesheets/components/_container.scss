@@ -25,12 +25,21 @@
   display: flex;
   justify-content: center;
 }
-.btn-container {
+.container-col {
   display: flex;
   flex-direction: column;
+}
+.container-around {
+  display: flex;
+  justify-content: space-around;
 }
 .ask-container {
   color: #dd8754;
   width: 21rem;
   text-align: center;
+}
+.page-container {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 4rem;
 }
