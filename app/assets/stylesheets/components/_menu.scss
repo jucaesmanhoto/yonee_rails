@@ -1,11 +1,12 @@
 .animation {
+  display: flex;
   animation-name: open;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-iteration-count: 1;
 }
 .menu {
+  display: none;
   background: linear-gradient(-45deg, #6a1c32, #af1f28);
-  display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;

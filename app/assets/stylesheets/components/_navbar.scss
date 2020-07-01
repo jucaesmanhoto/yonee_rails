@@ -3,7 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top: 0;
   height: 3rem;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
   p {
     color: #691C32;
     font-weight: 700;
